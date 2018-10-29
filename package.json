@@ -1,0 +1,60 @@
+{
+  "name": "my-journal",
+  "version": "1.0.0",
+  "description": "",
+  "watch": true,
+  "browserslist": [
+    "> 1%",
+    "ie > 9"
+  ],
+  "dependencies": {
+    "ejs-loader": "^0.3.1",
+    "express": "^4.16.3",
+    "normalize.css": "^8.0.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-loadable": "^5.5.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.2.1",
+    "autoprefixer-core": "^6.0.1",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "2.1.2",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.3.1",
+    "jest": "^23.6.0",
+    "node-sass": "^4.9.2",
+    "postcss-loader": "^3.0.0",
+    "postcss-scss": "^2.0.0",
+    "prettier": "^1.14.2",
+    "react-test-renderer": "^16.5.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.11.2"
+  },
+  "scripts": {
+    "build": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors --config webpack.prod.config.js",
+    "start": "webpack-dev-server --progress --open --config webpack.dev.config.js -p",
+    "test": "jest",
+    "format": "prettier --no-semi --single-quote --write 'src/**/*.js' ",
+    "watch": "webpack --watch"
+  },
+  "author": "Victor Igor",
+  "license": ""
+}

@@ -1,5 +1,5 @@
-const Icon = ({ name }) => (
-  <svg className={`icon ${name}`}>
+const Icon = ({ name, ...props }) => (
+  <svg className={`icon ${name}`} {...props}>
     <use xlinkHref={`#${name}`} />
   </svg>
 )

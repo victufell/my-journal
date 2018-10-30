@@ -1,46 +1,67 @@
-.app {
-  .darkmode {
-    background: $dark;
-    height: 100vh;
-    transition: .5s ease-in-out; 
-    & .header {
-      background: transparent;
-      & .header__logo {
-        color: $green;
+.darkmode {
+  background: $dark;
+  height: 100vh;
+  transition: .5s ease-in-out; 
+  & .header {
+    background: transparent;
+    & .header__logo {
+      color: $green;
+    }
+  }
+
+  & .container 
+    .home
+    .home__title {
+      color: $green;
+    }
+
+  & .container 
+  .home
+  .progress 
+  .progress__bar
+  .progress__mask {
+    background: $green !important;
+  }
+  & .container 
+  .home
+  .progress 
+  .progress__bar
+  .sun-icon {
+    fill: $green;
+    stroke: $green;
+  }
+  & .container 
+  .home
+  .progress p {
+    color: $green !important;
+  }
+
+  & .container 
+    .home
+    .form 
+    .list-components 
+    li {
+      color: #fff;
+      input {
+        border-color: #fff;
+        background: $dark;
+        &::placeholder {
+          color: #fff;
+        }
       }
     }
-    & .container 
-      .home
-      .home__title {
-        color: $green;
-      }
-    & .container 
-      .home
-      .form 
-      .list-components 
-      li {
-        color: #fff;
-        input {
-          border-color: #fff;
-          background: $dark;
-          &::placeholder {
-            color: #fff;
-          }
-        }
-      }
 
-      & .container 
-      .home
-      .form 
-      .btn {
-        background: #363636;
-        color: $green;
-        border: none;
-        .arrow-icon {
-          fill: $green;
-          stroke: $green;
-        }
+    & .container 
+    .home
+    .form 
+    .btn {
+      background: #363636;
+      color: $green;
+      border: none;
+      .arrow-icon {
+        fill: $green;
+        stroke: $green;
       }
+    }
 
-  }
 }

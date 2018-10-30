@@ -1,0 +1,31 @@
+.progress {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  position: relative;
+  .progress__bar, .progress__mask {
+    height: 10px;
+    border-radius: 10px;
+    transition: .4s;
+  }
+  .progress__mask {
+    position: absolute;
+    z-index: 1;
+  }
+  .progress__bar {
+    background: #D8D8D8;
+    position: relative;
+    width: 100%;
+    .sun-icon {
+      width: 46px;
+      height: 46px;
+      position: absolute;
+      top: -18px;
+      z-index: 2;
+      
+    }
+  }
+  .steps {
+    margin-left: 15px;
+  }
+}

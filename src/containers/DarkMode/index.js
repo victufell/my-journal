@@ -2,16 +2,17 @@ import DarkMode from 'components/DarkMode'
 import { connect } from 'react-redux'
 import { toggleDarkMode } from 'reducers/DarkMode/action-creators'
 
-const ContainerDarkMode = (props) => (
-  <DarkMode {...props} />
-)
+const ContainerDarkMode = props => <DarkMode {...props} />
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    handleToggleDarkMode: (e) => {
+    handleToggleDarkMode: e => {
       dispatch(toggleDarkMode())
     }
   }
 }
 
-export default connect(null, mapDispatchToProps)(ContainerDarkMode)
+export default connect(
+  null,
+  mapDispatchToProps
+)(ContainerDarkMode)

@@ -1,14 +1,13 @@
 import { connect } from 'react-redux'
+import Header from 'components/Header'
 
 const AppLayout = ({ children, darkmode }) => {
   return (
-    <div>
-      <div className='app'>
-        <main 
-          className={`${darkmode ? 'darkmode' : ''}`}>
-            {children}
-        </main>
-      </div>
+    <div className={`app ${darkmode ? 'darkmode' : ''}`}>
+      <Header />
+      <main className={`container`}>
+        {children}
+      </main>
     </div>
   )
 }

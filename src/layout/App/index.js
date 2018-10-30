@@ -1,11 +1,20 @@
-const AppLayout = ({ children }) => {
+import { connect } from 'react-redux'
+
+const AppLayout = ({ children, darkmode }) => {
   return (
     <div>
-      <div className="app">
-        <main>{children}</main>
+      <div className='app'>
+        <main 
+          className={`${darkmode ? 'darkmode' : ''}`}>
+            {children}
+        </main>
       </div>
     </div>
   )
 }
 
-export default AppLayout
+const mapStateToProps = ({ reducerDarkMode }) => ({
+  darkmode: reducerDarkMode.darkmode
+})
+
+export default connect(mapStateToProps)(AppLayout)

@@ -2,9 +2,17 @@
 @import './libs/normalize.scss';
 @import './libs/reset.scss';
 @import './animations.scss';
-
+@import './fonts.scss';
 @import './common.scss';
 
+@import './applayout.scss';
+
 //components
+@import './components/header.scss';
+@import './components/button.scss';
+@import './components/input.scss';
+@import './components/list.scss';
+@import './components/darkmode.scss';
 
 //pages
+@import './pages/home.scss';

@@ -1,0 +1,28 @@
+.header {
+  background: #5A99FC;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0 25px 20px;
+  .header__logo {
+    font-size: 18px;
+    color: #fff;
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    .icons__calendar, 
+    .icons__config, 
+    .icons__darkmode {
+      margin-right: 15px;
+      cursor: pointer;
+      @media (min-width: 360px) {
+        margin-right: 25px;
+      }
+    }
+    .calendar-icon, .config-icon {
+      width: 25px;
+      height: 26px;
+    }
+  }
+}

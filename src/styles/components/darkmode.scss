@@ -1,0 +1,58 @@
+label {
+  position: relative;
+  input[type='checkbox'] {
+    opacity: 0;
+    display: none;
+    &:checked ~ .check {
+      .night-icon {
+        opacity: 0;
+        transition: .1s;
+      }
+      .evening-icon {
+        opacity: 1;
+        transform: translateX(56px);
+      }
+      &:before {
+        background: $green;
+        transform: translateX(56px);
+        opacity: 1;
+        border: none;
+      }
+    }
+ 
+  }
+  .check {
+    display: block;
+    width: 95px;
+    height: 40px;
+    transition: .5s;
+    border-radius: 25px;
+    background: rgba(216, 216, 216, .3);
+    &:before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 2px solid #000;
+      opacity: .1;
+      box-sizing: border-box;
+      transition: .5s;
+      border-radius: 50%;
+    }
+    .night-icon {
+      opacity: 1;
+      transition-delay: .3s;
+    }
+    .evening-icon {
+      opacity: 0;
+      transition: .5s;
+    }
+    .night-icon, .evening-icon {
+      position: absolute;
+      width: 26px;
+      height: 27px;
+      top: 5px;
+      left: 8px;
+    }
+  }
+}

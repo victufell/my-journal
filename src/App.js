@@ -1,9 +1,14 @@
 import Loadable from 'react-loadable'
 import AppLayout from 'layout/App'
+import Header from 'components/Header'
+import Home from 'pages/Home'
 
 const App = () => (
-  <AppLayout>
-    <h1>Hello React</h1>
+  <AppLayout>   
+    <Header />
+    <div className='container'>
+      <Home />
+    </div>
   </AppLayout>
 )
 

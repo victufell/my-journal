@@ -1,0 +1,13 @@
+body {
+  font-family: 'Saira Condensed', sans-serif;
+  color: #4A4A4A;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 280px;
+  margin: 0 auto;
+  @media (min-width: 360px) {
+    max-width: 340px;
+  }
+}

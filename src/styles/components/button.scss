@@ -1,0 +1,26 @@
+.btn {
+  border-radius: 22px;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  &.-default {
+    background: $green;
+    color: #fff;
+  }
+  .icon {
+    width: 25px;
+    height: 18px;
+    position: absolute;
+    right: 105px;
+    fill: #fff;
+    stroke: #fff;
+    @media (min-width: 360px) {
+      right: 135px;
+    }
+  }
+
+}

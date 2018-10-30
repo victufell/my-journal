@@ -1,0 +1,46 @@
+.app {
+  .darkmode {
+    background: $dark;
+    height: 100vh;
+    transition: .5s ease-in-out; 
+    & .header {
+      background: transparent;
+      & .header__logo {
+        color: $green;
+      }
+    }
+    & .container 
+      .home
+      .home__title {
+        color: $green;
+      }
+    & .container 
+      .home
+      .form 
+      .list-components 
+      li {
+        color: #fff;
+        input {
+          border-color: #fff;
+          background: $dark;
+          &::placeholder {
+            color: #fff;
+          }
+        }
+      }
+
+      & .container 
+      .home
+      .form 
+      .btn {
+        background: #363636;
+        color: $green;
+        border: none;
+        .arrow-icon {
+          fill: $green;
+          stroke: $green;
+        }
+      }
+
+  }
+}

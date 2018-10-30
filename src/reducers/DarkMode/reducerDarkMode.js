@@ -1,14 +1,15 @@
-import { } from './actions'
+import { TOGLEDARKMODE } from './actions'
 
 export const initialState = {
-  
+  darkmode: false
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case '':
+    case TOGLEDARKMODE:
       return {
-        ...state
+        ...state,
+        darkmode: !state.darkmode
       }
 
     default:

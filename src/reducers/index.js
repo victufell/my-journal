@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import reducerUnk from './unk/reducerUnk'
+import reducerDarkMode from './DarkMode/reducerDarkMode'
 
 export default combineReducers({
-  reducerUnk
+  reducerDarkMode
 })

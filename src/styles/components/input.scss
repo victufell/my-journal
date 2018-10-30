@@ -1,0 +1,22 @@
+input {
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  outline: none;
+  border-color: #4A4A4A;
+  border-width: 0 0 3px 0;
+  border-style: solid;
+  font-size: 18px;
+  &::placeholder {
+    color: #4A4A4A;
+    opacity: .4;
+    font-size: 22px;
+  }
+  &.-light {
+    transition: border .15s ease-in-out,box-shadow .15s ease-in-out, padding .1s;
+    &:focus {
+      border: none;
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+  }
+}

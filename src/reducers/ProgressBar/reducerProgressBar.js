@@ -10,13 +10,13 @@ export default (state = initialState, action) => {
     case UPDATESTEP:
       return {
         ...state,
-        currentstep: state.currentstep + 1
+        currentstep: state.currentstep + action.value
       }
-    
+
     case RESETSTEP:
       return {
         ...state,
-        currentstep: initialState.currentstep 
+        currentstep: initialState.currentstep
       }
 
     default:

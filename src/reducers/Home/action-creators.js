@@ -1,6 +1,6 @@
 import { UPDATEVALUEINPUT } from './actions'
 
-export const updateValueInput = (value) => {
+export const updateValueInput = value => {
   return {
     type: UPDATEVALUEINPUT,
     value

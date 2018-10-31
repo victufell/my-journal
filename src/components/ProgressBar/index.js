@@ -12,7 +12,6 @@ const ProgressBar = ({ width, color, progressStep }) => (
       >
         <Icon name="sun-icon" />
       </div>
-      
     </div>
 
     <p className="steps" style={{ color: color }}>

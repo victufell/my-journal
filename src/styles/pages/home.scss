@@ -6,8 +6,21 @@
   }
   .form {
     margin-top: 35px;
-    ul li {
-      margin-bottom: 30px;
+    ul {
+      height: calc(100vh - 280px);
+      @media (min-width: 720px) {
+        height: calc(100vh - 360px);
+      }
+      li {
+        margin-bottom: 30px;
+      }
+    }
+    .wrapper-btn {
+      display: flex;
+      justify-content: space-around;
+      &.-rigth-btn {
+        justify-content: flex-end;
+      }
     }
   }
 }

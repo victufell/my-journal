@@ -1,5 +1,6 @@
 label {
   position: relative;
+  cursor: pointer;
   input[type='checkbox'] {
     opacity: 0;
     display: none;
@@ -40,7 +41,7 @@ label {
       border-radius: 50%;
     }
     .night-icon {
-      opacity: 1;
+      opacity: .2;
       transition-delay: .3s;
     }
     .evening-icon {

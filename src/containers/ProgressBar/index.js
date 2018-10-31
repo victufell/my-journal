@@ -7,15 +7,8 @@ const ContainerProgressBar = ({ currentstep, maxstep }) => {
   const width = `${(100 / maxstep) * currentstep}%`
   const color = `${colorstep[currentstep - 1]}`
   const progressStep = `${currentstep}/${maxstep}`
-  return (
-    <ProgressBar 
-      width={width} 
-      color={color}
-      progressStep={progressStep} 
-    />
-  )
+  return <ProgressBar width={width} color={color} progressStep={progressStep} />
 }
-
 
 const mapStateToProps = ({ reducerProgressBar }) => ({
   currentstep: reducerProgressBar.currentstep,

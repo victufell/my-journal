@@ -5,9 +5,7 @@ const AppLayout = ({ children, darkmode }) => {
   return (
     <div className={`app ${darkmode ? 'darkmode' : ''}`}>
       <Header />
-      <main className={`container`}>
-        {children}
-      </main>
+      <main className={`container`}>{children}</main>
     </div>
   )
 }

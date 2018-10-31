@@ -2,25 +2,40 @@
   border-radius: 22px;
   text-align: center;
   padding: 10px 0;
-  width: 100%;
+  width: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 22px;
   position: relative;
+  transition: .5s linear;
+  border: none;
   &.-default {
     background: $green;
     color: #fff;
+    &:hover {
+      background: darken($color: $green, $amount: 5%);
+      .icon {
+        transform: translateX(3px);
+      }
+    }
+  }
+  &.-shake {
+    animation-name: shake;
+    animation-duration: .2s;
+    animation-iteration-count: 3;
   }
   .icon {
     width: 25px;
     height: 18px;
     position: absolute;
-    right: 85px;
+    right: 25px;
     fill: #fff;
     stroke: #fff;
-    @media (min-width: 360px) {
-      right: 115px;
+    transition: .5s;
+    @media (max-width: 320px) {
+      width: 20px;
+      right: 15px;
     }
   }
 

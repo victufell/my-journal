@@ -5,15 +5,18 @@ export const initialState = {
     step: [
       {
         question: 'What would today great',
-        response: 3
+        response: 3,
+        inputs: ['']
       },
       {
         question: 'Second step',
-        response: 3
+        response: 2,
+        inputs: ['']
       },
       {
         question: 'third step',
-        response: 3
+        response: 1,
+        inputs: ['']
       }
     ]
   },

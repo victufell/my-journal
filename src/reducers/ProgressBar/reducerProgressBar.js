@@ -1,4 +1,4 @@
-import { UPDATESTEP } from './actions'
+import { UPDATESTEP, RESETSTEP } from './actions'
 
 export const initialState = {
   currentstep: 1,
@@ -10,9 +10,13 @@ export default (state = initialState, action) => {
     case UPDATESTEP:
       return {
         ...state,
-        currentstep: state.currentstep === state.maxstep 
-                        ? (state.currentstep + 1) - state.maxstep 
-                        : state.currentstep + 1
+        currentstep: state.currentstep + 1
+      }
+    
+    case RESETSTEP:
+      return {
+        ...state,
+        currentstep: initialState.currentstep 
       }
 
     default:

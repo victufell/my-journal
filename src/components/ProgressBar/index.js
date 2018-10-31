@@ -1,25 +1,22 @@
 import Icon from 'components/Icon'
 
-const ProgressBar = ({ currentstep, maxstep, colorstep }) => (
+const ProgressBar = ({ width, color, progressStep }) => (
   <div className="progress">
     <div className="progress__bar">
       <div
         className="progress__mask"
         style={{
-          width: `${(100 / maxstep) * currentstep}%`,
-          background: `${colorstep[currentstep - 1]}`
+          width: width,
+          background: color
         }}
-      />
-      <Icon
-        name="sun-icon"
-        style={{
-          transform: `translateX(${(500 / maxstep) * currentstep - 50}%)`
-        }}
-      />
+      >
+        <Icon name="sun-icon" />
+      </div>
+      
     </div>
 
-    <p className="steps" style={{ color: `${colorstep[currentstep - 1]}` }}>
-      {`${currentstep}/${maxstep}`}
+    <p className="steps" style={{ color: color }}>
+      {progressStep}
     </p>
   </div>
 )

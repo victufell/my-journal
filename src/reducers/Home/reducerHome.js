@@ -1,4 +1,4 @@
-import {} from './actions'
+import { UPDATEVALUEINPUT } from './actions'
 
 export const initialState = {
   steps: {
@@ -16,14 +16,16 @@ export const initialState = {
         response: 3
       }
     ]
-  }
+  },
+  value: ''
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case '':
+    case UPDATEVALUEINPUT:
       return {
-        ...state
+        ...state,
+        value: action.value
       }
 
     default:

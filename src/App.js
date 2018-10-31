@@ -1,4 +1,3 @@
-import { connect } from 'react-redux'
 import Loadable from 'react-loadable'
 import AppLayout from 'layout/App'
 import Home from 'pages/Home'
@@ -10,7 +9,7 @@ import {
   browserHistory
 } from 'react-router-dom'
 
-const App = ({ currentstep }) => (
+const App = () => (
   <Router history={browserHistory}>
     <Switch>
       <AppLayout>
@@ -20,8 +19,4 @@ const App = ({ currentstep }) => (
   </Router>
 )
 
-const mapStateToProps = ({ reducerProgressBar }) => ({
-  currentstep: reducerProgressBar.currentstep
-})
-
-export default connect(mapStateToProps)(App)
+export default App

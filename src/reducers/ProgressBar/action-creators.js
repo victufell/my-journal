@@ -1,7 +1,13 @@
-import { UPDATESTEP } from './actions'
+import { UPDATESTEP, RESETSTEP } from './actions'
 
 export const updateStep = () => {
   return {
-    type: UPDATESTEP,
+    type: UPDATESTEP
+  }
+}
+
+export const resetStep = () => {
+  return {
+    type: RESETSTEP
   }
 }

@@ -2,24 +2,31 @@
   .home__title {
     font-size: 22px;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 35px;
   }
   .form {
     margin-top: 35px;
     ul {
-      height: calc(100vh - 280px);
-      @media (min-width: 720px) {
-        height: calc(100vh - 360px);
-      }
+      min-height: 260px;
       li {
         margin-bottom: 30px;
       }
     }
     .wrapper-btn {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       &.-rigth-btn {
         justify-content: flex-end;
+      }
+
+      .next {
+        padding: 10px 40px 10px 0;
+      }
+
+      .prev {
+        color: $green;
+        background: #FFF;
+        border: 1px solid $green;
       }
     }
   }

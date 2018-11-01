@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 
 class Home extends Component {
   componentDidMount() {
-    this.props.history.push(`/step=${this.props.currentstep}`)
+    this.props.history.push(`/?step=${this.props.currentstep}`)
   }
 
   render() {
@@ -48,7 +48,7 @@ class Home extends Component {
               }`}
               onClick={this.props.setStep}
             >
-              {!this.props.finalstep ? 'Next' : 'Congratulations'}
+              Next
             </Button>
           </div>
         </form>
@@ -84,9 +84,9 @@ const mergeProps = (stateProps, { dispatch }, ownProps) => {
     dispatch(updateStep(1))
     if (finalstep) {
       dispatch(resetStep())
-      history.push(`/step=${currentstep - maxstep + 1}`)
+      history.push(`/?step=${currentstep - maxstep + 1}`)
     } else {
-      history.push(`/step=${currentstep + 1}`)
+      history.push(`/?step=${currentstep + 1}`)
     }
   }
 
@@ -94,7 +94,7 @@ const mergeProps = (stateProps, { dispatch }, ownProps) => {
     e.preventDefault()
     if (currentstep > 1) {
       dispatch(updateStep(-1))
-      history.push(`/step=${currentstep - 1}`)
+      history.push(`/?step=${currentstep - 1}`)
     }
   }
 

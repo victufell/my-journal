@@ -1,14 +1,13 @@
 .btn {
   border-radius: 22px;
   text-align: center;
-  padding: 10px 0;
-  width: 45%;
+  width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 22px;
+  font-size: 18px;
   position: relative;
-  transition: .5s linear;
+  transition: background .5s linear;
   border: none;
   &.-default {
     background: $green;
@@ -39,4 +38,8 @@
     }
   }
 
+  &.-disabled {
+    background: gainsboro;
+    pointer-events: none;
+  }
 }

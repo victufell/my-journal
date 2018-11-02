@@ -36,6 +36,7 @@ class Home extends Component {
               <li key={index * 2}>
                 {index + 1}.
                 <Input
+                  aria-label="response"
                   name={`response-${index + 1}`}
                   value={answers[index] || ''}
                   onChange={setValueInput}

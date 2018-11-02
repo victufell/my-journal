@@ -1,8 +1,17 @@
-import { UPDATEVALUEINPUT } from './actions'
+import { UPDATEVALUEINPUT, VALIDATIONINPUT } from './actions'
 
-export const updateValueInput = value => {
+export const updateValueInput = (value, position, currentstep) => {
   return {
     type: UPDATEVALUEINPUT,
-    value
+    value,
+    position,
+    currentstep
+  }
+}
+
+export const validationInput = (condition) => {
+  return {
+    type: VALIDATIONINPUT,
+    condition
   }
 }

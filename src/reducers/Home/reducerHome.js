@@ -1,4 +1,4 @@
-import { UPDATEVALUEINPUT } from './actions'
+import { UPDATEVALUEINPUT, VALIDATIONINPUT } from './actions'
 
 export const initialState = {
   steps: {
@@ -6,29 +6,50 @@ export const initialState = {
       {
         question: 'What would today great',
         response: 3,
-        inputs: ['']
+        answers: []
       },
       {
         question: 'Second step',
         response: 2,
-        inputs: ['']
+        answers: []
       },
       {
         question: 'third step',
         response: 1,
-        inputs: ['']
+        answers: []
       }
     ]
   },
-  value: ''
+  isValid: false
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case UPDATEVALUEINPUT:
+      // console.log(
+      //   {
+      //     ...state,
+      //     steps: {
+      //       ...state.steps,
+      //       step: [
+      //         ...state.steps.step,
+              
+      //       ]
+      //     }
+      //   }
+        
+      // )
+      state.steps.step[action.currentstep - 1].answers[action.position - 1] = action.value
+    
+      return {
+        ...state
+        
+      }
+
+    case VALIDATIONINPUT:
       return {
         ...state,
-        value: action.value
+        isValid: action.condition
       }
 
     default:

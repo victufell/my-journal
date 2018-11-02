@@ -1,20 +1,21 @@
+const R = require('ramda')
 import { UPDATEVALUEINPUT, VALIDATIONINPUT } from './actions'
 
 export const initialState = {
   steps: {
     step: [
       {
-        question: 'What would today great',
+        question: 'First Step',
         response: 3,
         answers: []
       },
       {
-        question: 'Second step',
+        question: 'Second Step',
         response: 2,
         answers: []
       },
       {
-        question: 'third step',
+        question: 'Third Step',
         response: 1,
         answers: []
       }
@@ -26,24 +27,19 @@ export const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case UPDATEVALUEINPUT:
-      // console.log(
-      //   {
-      //     ...state,
-      //     steps: {
-      //       ...state.steps,
-      //       step: [
-      //         ...state.steps.step,
-              
-      //       ]
-      //     }
-      //   }
-        
-      // )
-      state.steps.step[action.currentstep - 1].answers[action.position - 1] = action.value
-    
+      const newState = R.assocPath(
+        [
+          'steps',
+          'step',
+          action.currentstep - 1,
+          'answers',
+          action.position - 1
+        ],
+        action.value,
+        state
+      )
       return {
-        ...state
-        
+        ...newState
       }
 
     case VALIDATIONINPUT:

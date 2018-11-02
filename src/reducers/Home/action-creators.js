@@ -9,7 +9,7 @@ export const updateValueInput = (value, position, currentstep) => {
   }
 }
 
-export const validationInput = (condition) => {
+export const validationInput = condition => {
   return {
     type: VALIDATIONINPUT,
     condition

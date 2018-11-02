@@ -2,52 +2,59 @@ import { Component } from 'react'
 import Button from 'components/Button'
 import Input from 'components/Input'
 import ProgressBar from 'containers/ProgressBar'
-import { updateValueInput, validationInput } from 'reducers/Home/action-creators'
+import {
+  updateValueInput,
+  validationInput
+} from 'reducers/Home/action-creators'
 import { updateStep, resetStep } from 'reducers/ProgressBar/action-creators'
 import { connect } from 'react-redux'
 
 class Home extends Component {
   componentDidMount() {
-    this.props.history.push(`/?step=${this.props.currentstep}`)
+    const { history, currentstep } = this.props
+    history.push(`/?step=${currentstep}`)
   }
+
   render() {
+    const {
+      answers,
+      setStep,
+      question,
+      finalstep,
+      reduceStep,
+      amountElement,
+      setValueInput,
+      existPrevButton
+    } = this.props
     return (
       <section className="home">
         <ProgressBar />
-        <h1 className="home__title">{this.props.question}</h1>
+        <h1 className="home__title">{question}</h1>
         <form className="form">
           <ul className="list-components">
-            {this.props.amountElement.map((number, index) => (
+            {amountElement.map((number, index) => (
               <li key={index * 2}>
                 {index + 1}.
                 <Input
                   name={`response-${index + 1}`}
-                  value={this.props.answers[index]}
-                  onChange={this.props.setValueInput}
+                  value={answers[index] || ''}
+                  onChange={setValueInput}
                 />
               </li>
             ))}
           </ul>
           <div
-            className={`wrapper-btn ${
-              !this.props.existPrevButton ? '-rigth-btn' : ''
-            }`}
+            className={`wrapper-btn ${!existPrevButton ? '-rigth-btn' : ''}`}
           >
-            {this.props.existPrevButton && (
-              <Button
-                className={`prev -default`}
-                onClick={this.props.reduceStep}
-              >
+            {existPrevButton && (
+              <Button className={`prev -default`} onClick={reduceStep}>
                 Previous
               </Button>
             )}
             <Button
-              hasIcon={`${!this.props.finalstep ? 'arrow-icon' : ''}`}
-              className={`next -default ${
-                this.props.finalstep ? '-shake' : ''
-              } ${!this.props.isValid ? '-disabled' : ''}`
-              }
-              onClick={this.props.setStep}
+              hasIcon={'arrow-icon'}
+              className={`next -default ${finalstep ? '-shake' : ''}`}
+              onClick={setStep}
             >
               Next
             </Button>
@@ -69,35 +76,27 @@ const mapDispatchToProps = dispatch => ({ dispatch })
 
 const mergeProps = (stateProps, { dispatch }, ownProps) => {
   const { steps, currentstep, maxstep } = stateProps
-  
+
   const step = steps[currentstep - 1]
-  const { answers, question } = step
+  const { answers, question, response } = step
   const { history } = ownProps
-  
+
   const finalstep = currentstep === maxstep ? true : false
   const existPrevButton = currentstep > 1 ? true : false
-  
-  const amountElement = Array.apply(null, { length: step.response })
+
+  const amountElement = Array.apply(null, { length: response })
     .map(Number.call, Number)
     .map(number => number)
-  
+
   const setValueInput = e => {
     const position = e.target.name.replace('response-', '')
     dispatch(updateValueInput(e.target.value, position, currentstep))
-    const amount = answers.reduce((acc, value) => acc += value.length, 0)
-    
-    if (amount > 0) {
-       dispatch(validationInput(true))
-    } else {
-      validationInput(true)
-    }
-     
   }
+
   const setStep = e => {
     e.preventDefault()
-
     dispatch(updateStep(1))
-    
+
     if (finalstep) {
       dispatch(resetStep())
       history.push(`/?step=${currentstep - maxstep + 1}`)
@@ -115,12 +114,12 @@ const mergeProps = (stateProps, { dispatch }, ownProps) => {
   }
 
   return {
+    answers,
+    setStep,
     question,
     finalstep,
-    answers,
-    amountElement,
-    setStep,
     reduceStep,
+    amountElement,
     setValueInput,
     existPrevButton,
     ...stateProps,

@@ -5,6 +5,6 @@ import data from './data'
 
 export default compose (
   setDisplayName('src/enhancers/Home'),
+  data,
   lifecycle,
-  data
 )

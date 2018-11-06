@@ -4,6 +4,16 @@ import { updateValueInput } from 'reducers/Home/action-creators'
 import { updateStep, resetStep } from 'reducers/ProgressBar/action-creators'
 import { connect } from 'react-redux'
 
+const handleCondition = (condition) => {
+  return condition ? true : false
+}
+
+const createArrayByAmount = (amount) => {
+  return Array.apply(null, { length: amount })
+              .map(Number.call, Number)
+              .map(number => number)
+}
+
 const mapStateToProps = ({ reducerHome, reducerProgressBar }) => ({
   steps: reducerHome.steps.step,
   isValid: reducerHome.isValid,
@@ -15,17 +25,15 @@ const mapDispatchToProps = dispatch => ({ dispatch })
 
 const mergeProps = (stateProps, { dispatch }, ownProps) => {
   const { steps, currentstep, maxstep } = stateProps
-
+  
   const step = steps[currentstep - 1]
   const { answers, question, response } = step
   const { history } = ownProps
+  
+  const finalstep = handleCondition(currentstep === maxstep)
+  const existPrevButton = handleCondition(currentstep > 1)
 
-  const finalstep = currentstep === maxstep ? true : false
-  const existPrevButton = currentstep > 1 ? true : false
-
-  const amountElement = Array.apply(null, { length: response })
-    .map(Number.call, Number)
-    .map(number => number)
+  const amountElement = createArrayByAmount(response)
 
   const setValueInput = e => {
     const position = e.target.name.replace('response-', '')

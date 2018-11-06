@@ -1,4 +1,5 @@
 import Icon from 'components/Icon'
+import enhancer from 'enhancers/ProgressBar'
 
 const ProgressBar = ({ width, color, progressStep }) => (
   <div className="progress">
@@ -20,4 +21,4 @@ const ProgressBar = ({ width, color, progressStep }) => (
   </div>
 )
 
-export default ProgressBar
+export default enhancer(ProgressBar)

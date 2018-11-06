@@ -23,10 +23,6 @@ module.exports = {
         }),
         include: path.join(__dirname, 'src')
       },
-      // {
-      //   test: /\.scss/,
-      //   loader: ExtractTextPlugin.extract(["css-loader", "sass-loader"])
-      // },
       {
         test: /\.js$/,
         exclude: /node_modules/,

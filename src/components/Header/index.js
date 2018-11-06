@@ -1,5 +1,5 @@
 import Icon from 'components/Icon'
-import DarkMode from 'containers/DarkMode'
+import DarkMode from 'components/DarkMode'
 
 const Header = () => (
   <header className="header">
